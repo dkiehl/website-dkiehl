@@ -1,4 +1,0 @@
-https://iptv-org.github.io/iptv/index.m3u
-
-http://safari55584.cdngold.me/get.php?username=DaleKiehl&password=eb10ce2672&type=m3u_plus&output=ts
-
