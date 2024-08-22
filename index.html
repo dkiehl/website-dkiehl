@@ -9,27 +9,6 @@
 <title>TESTING</title>
 <body class="body">
         <main>
-        <%
-                Set CN = Server.CreateObject("ADODB.Connection")
-                Set RS = Server.CreateObject("ADODB.Recordset")
-
-                DSNtest="DRIVER={SQL Server};SERVER=184.168.47.13;UID=sqluser;PWD=Za7n8!9k;DATABASE=itadynamic_ipaddr"
-                DSNtest="DRIVER={SQL Server};SERVER=timesheets.database.windows.net;UID=dkiehl;PWD=WNMhgb1701;DATABASE=timesheets"
-
-                CN.open DSNtest
-                RS.open sql,CN
-                do while not RS.EOF
-                        response.write('.')
-
-
-
-                        rs.movenext
-                loop
-
-                response.write("END")
-                RS.close
-                CN.close
-        %>
         </main>
 </body>
 </html>
