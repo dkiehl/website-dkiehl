@@ -6,43 +6,30 @@
         <title>DKiehl.com</title>
         <link rel="stylesheet" href="styles.css">
 </head>
-<title>Dale's Website</title>
+<title>TESTING</title>
 <body class="body">
-        <header class="header">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <main>
+        <%
+                Set CN = Server.CreateObject("ADODB.Connection")
+                Set RS = Server.CreateObject("ADODB.Recordset")
 
-            <main>
-                <%
-                        Set CN = Server.CreateObject("ADODB.Connection")
-                        Set RS = Server.CreateObject("ADODB.Recordset")
+                DSNtest="DRIVER={SQL Server};SERVER=184.168.47.13;UID=sqluser;PWD=Za7n8!9k;DATABASE=itadynamic_ipaddr"
+                DSNtest="DRIVER={SQL Server};SERVER=timesheets.database.windows.net;UID=dkiehl;PWD=WNMhgb1701;DATABASE=timesheets"
 
-                        DSNtest="DRIVER={SQL Server};SERVER=184.168.47.13;UID=sqluser;PWD=Za7n8!9k;DATABASE=itadynamic_ipaddr"
-                        DSNtest="DRIVER={SQL Server};SERVER=timesheets.database.windows.net;UID=dkiehl;PWD=WNMhgb1701;DATABASE=timesheets"
-
-                        CN.open DSNtest
-                        RS.open sql,CN
-                        do while not RS.EOF
-                                response.write('.')
+                CN.open DSNtest
+                RS.open sql,CN
+                do while not RS.EOF
+                        response.write('.')
 
 
 
-                                rs.movenext
-                        loop
+                        rs.movenext
+                loop
 
-                        response.write("END")
-                        RS.close
-                        CN.close
-                %>
-           </main>
-        <footer>
-                <center><p>&copy; 2024 DKiehl.com</p></center>
-        </footer>
+                response.write("END")
+                RS.close
+                CN.close
+        %>
+        </main>
 </body>
 </html>
