@@ -18,25 +18,28 @@
             </header>
 
             <main>
-                <section class="hero">
-                        <h1>Welcome to DKiehl.com</h1>
-                        <p>I am a business central developer dedicated to providing top-notch services.</p>
-                        <button>Learn More</button>
-                </section>
-                <section class="contact">
-                        <h2>Get in Touch</h2>
-                        <p>Want to learn more about our services or schedule a consultation?</p>
-                        <form><table border="0">
-                                <tr><td><label for="name">Name:</label></td>
-                                    <td><input type="text" id="name"></td></tr>
-                                <tr><td><label for="email">Email:</label></td>
-                                    <td><input type="email" id="email"><br></td></tr>
-                                <tr><td><label for="message">Message:</label></td>
-                                    <td><textarea id="message"></textarea><br></td></tr>
-                                <tr><td>&nbsp;</td><td><button type="submit">Send</button></td></tr>
-                        </table></form>
-                </section>
-        </main>
+                <%
+                        Set CN = Server.CreateObject("ADODB.Connection")
+                        Set RS = Server.CreateObject("ADODB.Recordset")
+
+                        DSNtest="DRIVER={SQL Server};SERVER=184.168.47.13;UID=sqluser;PWD=Za7n8!9k;DATABASE=itadynamic_ipaddr"
+                        DSNtest="DRIVER={SQL Server};SERVER=timesheets.database.windows.net;UID=dkiehl;PWD=WNMhgb1701;DATABASE=timesheets"
+
+                        CN.open DSNtest
+                        RS.open sql,CN
+                        do while not RS.EOF
+                                response.write('.')
+
+
+
+                                rs.movenext
+                        loop
+
+                        response.write("END")
+                        RS.close
+                        CN.close
+                %>
+           </main>
         <footer>
                 <center><p>&copy; 2024 DKiehl.com</p></center>
         </footer>
